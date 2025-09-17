@@ -3,4 +3,33 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+    <welcome-file-list>
+        <welcome-file>register.html</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>iu.fit.se.tuan1_dth.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>daotaohieu</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+        <url-pattern>/hi</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+        <param-name>content</param-name>
+        <param-value>Content hehe</param-value>
+    </context-param>
+
 </web-app>

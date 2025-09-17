@@ -1,10 +1,16 @@
 package iu.fit.se.tuan1_dth;
 
 import java.io.*;
+
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+//@WebServlet(name = "helloServlet", urlPatterns = {"/hello", "/hi"},
+//        initParams = {
+//                @WebInitParam(name = "username", value = "admin"),
+//                @WebInitParam(name = "password", value = "12345")
+//        }
+//)
 public class HelloServlet extends HttpServlet {
     private String message;
 
@@ -19,6 +25,8 @@ public class HelloServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
+        out.println("<h1> Username: "  + this.getServletConfig().getInitParameter("username") + "</h1>");
+        out.println("<h1> Content: "  + this.getServletContext().getInitParameter("content") + "</h1>");
         out.println("</body></html>");
     }
 

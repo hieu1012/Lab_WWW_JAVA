@@ -9,8 +9,19 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "registration", value = "/registration")
+@WebServlet(name = "registration", value = "/dang-ky")
 public class Register extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/plain");
+        PrintWriter writer = resp.getWriter();
+
+        writer.println("Get method called");
+        writer.println("UserName " + req.getParameter("username") );
+
+        writer.close();
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
